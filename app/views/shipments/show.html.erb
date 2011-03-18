@@ -1,0 +1,18 @@
+<p>
+  <b>Staff id:</b>
+  <%=h @shipment.staff_ID %>
+</p>
+
+<p>
+  <b>Tracking number:</b>
+  <%=h @shipment.tracking_number %>
+</p>
+
+<p>
+  <b>Transaction id:</b>
+  <%=h @shipment.transaction_ID %>
+</p>
+
+
+<%= link_to 'Edit', edit_shipment_path(@shipment) %> |
+<%= link_to 'Back', shipments_path %>

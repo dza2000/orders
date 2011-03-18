@@ -1,0 +1,32 @@
+<h1>Listing recurring_gifts</h1>
+
+<table>
+  <tr>
+    <th>Transaction</th>
+    <th>Contact</th>
+    <th>Start date</th>
+    <th>Amount</th>
+    <th>Deactivate</th>
+    <th>Interval</th>
+    <th>Interval size</th>
+  </tr>
+
+<% @recurring_gifts.each do |recurring_gift| %>
+  <tr>
+    <td><%=h recurring_gift.transaction_id %></td>
+    <td><%=h recurring_gift.contact_id %></td>
+    <td><%=h recurring_gift.start_date %></td>
+    <td><%=h recurring_gift.amount %></td>
+    <td><%=h recurring_gift.deactivate %></td>
+    <td><%=h recurring_gift.interval %></td>
+    <td><%=h recurring_gift.interval_size %></td>
+    <td><%= link_to 'Show', recurring_gift %></td>
+    <td><%= link_to 'Edit', edit_recurring_gift_path(recurring_gift) %></td>
+    <td><%= link_to 'Destroy', recurring_gift, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New recurring_gift', new_recurring_gift_path %>

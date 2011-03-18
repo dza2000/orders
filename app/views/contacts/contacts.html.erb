@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Contacts: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <link rel="stylesheet" type="text/css" href="/javascripts/ext/resources/css/ext-all.css" />
+  <%= javascript_include_tag :defaults, :cache => true%>
+  <script type="text/javascript" src="/javascripts/ext/adapter/ext/ext-base.js"></script>
+  <script type="text/javascript" src="/javascripts/ext/ext-all-debug.js"></script>
+  <script type='text/javascript'>
+  		Ext.BLANK_IMAGE_URL = '/javascripts/ext/resources/images/default/s.gif';
+  </script>
+</head>
+<body>
+	
+<div id="top_header">
+<h1><%= image_tag('crilogo2.png', :width=>"125px", :class=>"photo", :align=>"absmiddle") %>
+CRI Control Panel- <%= controller.controller_name.titleize %></h1>
+</div>
+<div id="left_bar">
+	<%= link_to "Add a Contact", new_contact_path%><br />
+	<%= link_to "Add a Note", new_contact_note_path(@contact) %>
+	</div>
+
+<div id="content">
+<%= yield %>
+</div>
+</div>
+</body>
+</html>

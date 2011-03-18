@@ -1,0 +1,43 @@
+<p>
+  <b>Line1:</b>
+  <%=h @address.line1 %>
+</p>
+
+<p>
+  <b>Line2:</b>
+  <%=h @address.line2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @address.city %>
+</p>
+
+<p>
+  <b>State id:</b>
+  <%=h @address.state_id %>
+</p>
+
+<p>
+  <b>Country id:</b>
+  <%=h @address.country_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @address.type %>
+</p>
+
+<p>
+  <b>Is primary:</b>
+  <%=h @address.is_primary %>
+</p>
+
+<p>
+  <b>Contact id:</b>
+  <%=h @address.contact_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

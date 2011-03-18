@@ -1,0 +1,33 @@
+<p>
+  <b>Contact:</b>
+  <%=h @profile_addon.contact_id %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%=h @profile_addon.age %>
+</p>
+
+<p>
+  <b>Birth month:</b>
+  <%=h @profile_addon.birth_month %>
+</p>
+
+<p>
+  <b>Station:</b>
+  <%=h @profile_addon.station_id %>
+</p>
+
+<p>
+  <b>Married:</b>
+  <%=h @profile_addon.married %>
+</p>
+
+<p>
+  <b>S1 cluster:</b>
+  <%=h @profile_addon.s1_cluster %>
+</p>
+
+
+<%= link_to 'Edit', edit_profile_addon_path(@profile_addon) %> |
+<%= link_to 'Back', profile_addons_path %>

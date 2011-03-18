@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @subscription_type.name %>
+</p>
+
+<p>
+  <b>Number of issues:</b>
+  <%=h @subscription_type.number_of_issues %>
+</p>
+
+<p>
+  <b>Unit cost:</b>
+  <%=h @subscription_type.unit_cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_subscription_type_path(@subscription_type) %> |
+<%= link_to 'Back', subscription_types_path %>

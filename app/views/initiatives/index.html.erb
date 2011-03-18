@@ -1,0 +1,26 @@
+<h1>Listing initiatives</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Minimum donation</th>
+    <th>Catalog item</th>
+  </tr>
+
+<% @initiatives.each do |initiative| %>
+  <tr>
+    <td><%=h initiative.name %></td>
+    <td><%=h initiative.description %></td>
+    <td><%=h initiative.minimum_donation %></td>
+    <td><%=h initiative.catalog_item_id %></td>
+    <td><%= link_to 'Show', initiative %></td>
+    <td><%= link_to 'Edit', edit_initiative_path(initiative) %></td>
+    <td><%= link_to 'Destroy', initiative, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New initiative', new_initiative_path %>

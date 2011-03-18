@@ -1,0 +1,53 @@
+<p>
+  <b>Transaction id:</b>
+  <%=h @shipping_detail.transaction_ID %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%=h @shipping_detail.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @shipping_detail.last_name %>
+</p>
+
+<p>
+  <b>Address line1:</b>
+  <%=h @shipping_detail.address_line1 %>
+</p>
+
+<p>
+  <b>Address line2:</b>
+  <%=h @shipping_detail.address_line2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @shipping_detail.city %>
+</p>
+
+<p>
+  <b>State id:</b>
+  <%=h @shipping_detail.state_ID %>
+</p>
+
+<p>
+  <b>Province:</b>
+  <%=h @shipping_detail.province %>
+</p>
+
+<p>
+  <b>Country id:</b>
+  <%=h @shipping_detail.country_ID %>
+</p>
+
+<p>
+  <b>Shipping method:</b>
+  <%=h @shipping_detail.shipping_method %>
+</p>
+
+
+<%= link_to 'Edit', edit_shipping_detail_path(@shipping_detail) %> |
+<%= link_to 'Back', shipping_details_path %>

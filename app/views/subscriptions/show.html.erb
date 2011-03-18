@@ -1,0 +1,30 @@
+<p>
+  <b>Transaction id:</b>
+  <%=h @subscription.transaction_id %>
+</p>
+
+<p>
+  <b>Subscription type id:</b>
+  <%=h @subscription.subscription_type.name %>
+</p>
+
+<p>
+  <b>Unit cost static:</b>
+  <%=h @subscription.unit_cost %>
+</p>
+
+<p>
+  <b>Deactivated:</b>
+  <%=h @subscription.deactivated %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @subscription.quantity %>
+</p>
+<% for received_issue in @subscription.received_issues %>
+<%= received_issue.ship %>
+<% end %>
+
+<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
+<%= link_to 'Back', subscriptions_path %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @country.name %>
+</p>
+
+<p>
+  <b>Abbrev:</b>
+  <%=h @country.abbrev %>
+</p>
+
+<p>
+  <b>Country code:</b>
+  <%=h @country.country_code %>
+</p>
+
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

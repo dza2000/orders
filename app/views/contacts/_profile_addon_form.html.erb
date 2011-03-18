@@ -1,0 +1,26 @@
+<p class="fields">
+	
+	<table width=350>
+		<tr>
+			<td>
+				<%= f.label :age %>
+    <%= f.text_field :age, :size=>2 %>
+  			</td>
+  			<td> 
+  <%= f.label :birth_month %>
+    <%= f.text_field :birth_month, :size=>2 %>
+  			</td>
+		</tr>
+		<tr>
+	<td>
+	<%= f.label :married %>
+	<%= f.check_box :married  %>
+	</td>
+	<td>
+	<%= f.label :station_id %>
+	<%= f.collection_select(:station_id, Station.find_by_sql("SELECT * FROM stations GROUP BY CONCAT(call_letters,zip_code)"), :id, :dropdownselect) %>
+	</td>
+		</tr>
+	</table>
+    
+	 </p>

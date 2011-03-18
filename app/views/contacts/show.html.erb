@@ -1,0 +1,155 @@
+
+
+<div id="contact_whitespace">
+<div id="contact_module_head">
+<b>Contacts:</b> <%=h @contact.title %> <%=h @contact.first_name %> <%=h @contact.m_initial %> <%=h @contact.last_name %> <%=h @contact.suffix %> - <%= @contact.id %><br>
+</div>
+<div id="contact_nav">
+	<%= link_to 'New Transaction',  new_contact_transaction_path(@contact), :target => "_blank" %> |
+	<%= link_to 'Edit Contact', edit_contact_path(@contact) %> |
+    <%= link_to 'All Contacts', contacts_path %> |
+	<%= link_to 'Delete Contact', @contact, :confirm => 'Are you sure?', :method => :delete %>
+
+</div>
+
+ 
+<table class="contact_table" >
+	<tr>
+		<td class="contact_heading">Primary Address</td>
+		<td class="contact_info"><% @contact.addresses.find(:all, :conditions => { :is_primary => '1' }).each do |address| %>
+		<%= address.line1 %><br>
+        <% if address.line2? %>
+<%= address.line2 %><br>
+<% else %>
+    
+<% end %>
+<% if address.stateAbbrev == "N/A" %>
+<%= address.city%>, <%= address.province %> <%= address.zip %><br>
+<%= address.countryAbbrev %>
+<% else %>
+        <%= address.city %>, <%= address.stateAbbrev %> <%= address.zip %><br>
+        <%= address.countryAbbrev %>
+      <% end %>
+<% end %></td>
+<td class="contact_heading">Primary Phone</td>
+<td class="contact_info"><% for phone in @contact.phones %>
+(<%= phone.prefix %>) <%= number_to_phone(phone.phone_number) %> Ext. <%= phone.extension %>
+<% if phone.phone_type.empty? %>
+<div id="type">(Unspecified)</div>
+<% else %>
+<div id="type">(<%= phone.phone_type%>)</div>
+<% end %>
+<% end %></td>
+	</tr>
+	<tr>
+		<td class="contact_heading">Ind. or Org?</td>
+		<td class="contact_info"><% if @contact.is_individual==false %>
+Organization
+<% else%>	
+Individual
+<% end %></td>
+<td class="contact_heading">Greeting 1</td>
+<td class="contact_info"><%=h @contact.greeting1 %></td>
+	</tr>
+	<tr>
+		<td class="contact_heading">Company</td>
+		<td class="contact_info"><%=h @contact.company_name %></td>
+		<td class="contact_heading">Greeting 2</td>
+		<td class="contact_info"><%=h @contact.greeting2 %></td>
+	</tr>
+	<tr>
+		<td class="contact_heading">Job Title</td>
+		<td class="contact_info"><%=h @contact.job_title %></td>
+		<td class="contact_heading">Greeting 3</td>
+		<td class="contact_info"><%=h @contact.greeting3 %></td>
+	</tr>
+	<tr>
+		<td class="contact_heading">Primary Email</td>
+		<td class="contact_info"><% @contact.emails.find(:all, :conditions => { :is_primary => '1' }).each do |email| %>
+		<a href="mailto:<%= email.address%>"><%= email.address%></a>
+		<div id="type">(<%= email.email_type %>)</div>
+		<% end %>
+		</td>
+		<td class="contact_heading">Special Flags</td>
+		<td class="contact_info"><%=h @contact.special_flag %></td>
+	</tr>
+</table>
+
+
+
+<script type="text/javascript">
+  function contactTabs() {
+	var jnlPanel = new Ext.Panel({
+		height : 275,
+		padding : 10,
+		autoScroll : true,
+		colapsable	:	true,
+		html		:	'<%= render :partial => "contact_journal_detail" %>'
+		});
+	
+	var transPanel = new Ext.Panel({
+		height: 275,
+		padding : 10,
+		colapsable  :   true,
+		autoScroll  :   true,
+		html        :   '<%= render :partial => "contact_trans_detail" %>'
+	});
+	
+	var shipPanel = new Ext.Panel({
+		height : 275,
+		padding : 10,
+		colapsable  :   true,
+		html        :   '<%= render :partial => "contact_shipping_detail" %>'
+	});
+	
+	var tabs = new Ext.TabPanel({
+	height :	300,
+	
+    renderTo: Ext.get('tabdiv'),
+    activeTab: 0,
+    items: [{
+        title: 'Subscription Details',
+        items: [
+        	jnlPanel
+        	]
+    },{
+        title: 'Transaction Details',
+        items: [
+			transPanel
+		]
+    },{
+		title: 'Shipping Addresses',
+		items: [
+			shipPanel
+		]
+	}]
+});
+};
+
+Ext.onReady(contactTabs);
+</script>
+<div id='tabdiv'></div>
+<p>
+  <b>Do not mail:</b>
+  <%=h @contact.do_not_mail %>
+</p>
+
+<p>
+  <b>Do not email:</b>
+  <%=h @contact.do_not_email %>
+</p>
+
+<p>
+  <b>Do not phone:</b>
+  <%=h @contact.do_not_phone %>
+</p>
+</div>
+<% if @contact.subscriptions.empty? %>
+<% else %>
+<% if @contact.issues_remaining <= 1%>
+<%= javascript_tag "alert('This subscription has expired.  Please call customer today.')" %>
+<% elsif @contact.issues_remaining == 2%>
+<%= javascript_tag "alert('This subscription has only two issues left.  Please take action now.')"%>
+<% else %>
+<% end %>
+<% end %>

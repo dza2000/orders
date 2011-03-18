@@ -1,0 +1,22 @@
+<h1>Listing shipment_lines</h1>
+
+<table>
+  <tr>
+    <th>Shipment id</th>
+    <th>Transaction line id</th>
+  </tr>
+
+<% @shipment_lines.each do |shipment_line| %>
+  <tr>
+    <td><%=h shipment_line.shipment_ID %></td>
+    <td><%=h shipment_line.transaction_line_ID %></td>
+    <td><%= link_to 'Show', shipment_line %></td>
+    <td><%= link_to 'Edit', edit_shipment_line_path(shipment_line) %></td>
+    <td><%= link_to 'Destroy', shipment_line, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New shipment_line', new_shipment_line_path %>

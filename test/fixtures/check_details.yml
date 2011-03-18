@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  payment_ID: 1
+  check_number: 1
+  amount: 9.99
+
+two:
+  payment_ID: 1
+  check_number: 1
+  amount: 9.99

@@ -1,0 +1,33 @@
+<p>
+  <b>Prefix:</b>
+  <%=h @phone.prefix %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%=h @phone.phone_number %>
+</p>
+
+<p>
+  <b>Extension:</b>
+  <%=h @phone.extension %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @phone.type %>
+</p>
+
+<p>
+  <b>Is primary:</b>
+  <%=h @phone.is_primary %>
+</p>
+
+<p>
+  <b>Contact id:</b>
+  <%=h @phone.contact_ID %>
+</p>
+
+
+<%= link_to 'Edit', edit_phone_path(@phone) %> |
+<%= link_to 'Back', phones_path %>

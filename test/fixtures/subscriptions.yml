@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  transaction_ID: 1
+  subscription_type_ID: 1
+  unit_cost_static: 9.99
+  deactivated: false
+  quantity: 1
+
+two:
+  transaction_ID: 1
+  subscription_type_ID: 1
+  unit_cost_static: 9.99
+  deactivated: false
+  quantity: 1

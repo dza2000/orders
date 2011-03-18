@@ -1,0 +1,137 @@
+<% form_for(@contact) do |f| %>
+  <%= f.error_messages %>
+<table width="775px">
+	<tr>
+		<td valign="top">
+			<h3>Personal Information</h3>
+<table width="400px" border="0">
+    <tr>
+    	<td>Title</td>
+        <td>First Name</td>
+        <td>MI</td>
+        <td>Last Name</td>
+		<td>Suffix</td>
+    </tr>
+	<tr>
+		<td><%= f.text_field :title, :size=>"2" %></td>
+		<td><%= f.text_field :first_name, :size=>"7" %></td>
+		<td><%= f.text_field :m_initial , :size=>"2"%></td>
+		<td><%= f.text_field :last_name, :size=>"7" %></td>
+		<td><%= f.text_field :suffix, :size=>"2" %></td>
+	</tr>
+</table>
+
+  
+  <p>
+    <%= f.label "Individual ?" %>
+    <%= f.check_box :is_individual %>
+  </p>
+  
+  <table width="500">
+  	<tr>
+  		<td valign=top>
+  		<h3>Company Information</h3>
+  <table border="0">
+  	<tr>
+  		<td valign=top>Company Name</td>
+		<td><%= f.text_field :company_name, :size=>"10" %></td>
+  	</tr>
+	<tr>
+		<td>Job Title</td>
+		<td><%= f.text_field :job_title, :size=>"10" %></td>
+	</tr>
+	</table>	
+  		</td>
+		<td valign=top>
+			<h3>Additional Information</h3>
+			<div>
+			<% f. fields_for :profile_addon do |builder| %>
+		<%= render 'profile_addon_form', :f => builder %>
+		<% end %>
+		
+		
+		</div>
+		</td>
+  	</tr>
+  </table>
+  
+ </td>
+ <td>    
+  <h3>Contact Information</h3>
+  
+    <%= f.label "Greeting 1" %>
+    <%= f.text_field :greeting1 %>
+  
+  
+    <%= f.label "Greeting 2" %>
+    <%= f.text_field :greeting2 %>
+  
+    <%= f.label "Greeting 3" %>
+    <%= f.text_field :greeting3 %>
+  
+  <table  border="0">
+    <tr>
+        <td><%= f.label :do_not_mail %>
+        </td>
+        <td><%= f.label :do_not_email %>
+        </td>
+        <td><%= f.label :do_not_phone %>
+        </td>
+    </tr>
+    <tr>
+        <td> <%= f.check_box :do_not_mail %>
+        </td>
+        <td><%= f.check_box :do_not_email %>
+        </td>
+        <td><%= f.check_box :do_not_phone %>
+        </td>
+    </tr>
+</table>
+    
+  
+    <%= f.label :special_flag %>
+    <%= f.text_field :special_flag %>
+  
+  </td>
+  </tr>
+  </table>
+  <table width="750px" border="0">
+    <tr>
+        <td style="background-color:#ABC3D7;padding:10px;border:1px solid darkgrey;" valign="top">
+		 <h3>Address Details</h3>
+		
+		<div id="address_table">
+  <% f.fields_for :addresses do |builder| %>
+  <%= render 'address_form', :f => builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Address", f, :addresses%>
+  </div>
+  
+  
+        </td>
+        <td style="background-color:#ABC3D7;padding:10px;border:1px solid darkgrey;" valign="top"><h3>Email Address</h3>
+        	<div id="email_table">
+			<% f. fields_for :emails do |builder| %>
+		<%= render 'email_form', :f => builder %>
+		<% end %>
+		<%= link_to_add_fields "Add Email Address", f, :emails%>
+		</div>
+        </td>
+        <td style="background-color:#ABC3D7;padding:10px;border:1px solid darkgrey;" valign="top"><h3>Phone Number</h3>
+		<div id="phone_table">
+		<% f.fields_for :phones do |builder| %>
+		<%= render 'phone_form', :f => builder %>
+		<% end %>
+		<%= link_to_add_fields "Add Phone Number", f, :phones%>
+		</div>
+        </td>
+    </tr>
+</table>
+
+
+  <p>
+    <p>
+    <%= f.submit "Update" %>
+  </p>
+  </p>
+<% end %>

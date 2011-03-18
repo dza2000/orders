@@ -1,0 +1,25 @@
+<p>
+  <b>Name:</b>
+  <%=h @donation_line.name %>
+</p>
+
+<p>
+  <b>Sku:</b>
+  <%=h @donation_line.sku %>
+</p>
+
+<p>
+  <b>Needs printing:</b>
+  <%=h @donation_line.needs_printing %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @donation_line.quantity %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_donation_line_path(@donation_line) %> |
+<%= link_to 'Back', donation_lines_path %>

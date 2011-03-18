@@ -1,0 +1,44 @@
+<h1>Find a Transaction</h1>
+
+<div id="transaction_search">
+		<h3>Search By:</h3>
+	<% form_for @search do |f| %>
+	<table>
+		<tr>
+		<td><b><%= f.label :id_like, "Transaction ID#"%></b></td><td><%= f.text_field :id_like, :size=>8%></td>
+		</tr>
+		<tr>
+			
+		<td><%= submit_tag "Search", :name=> nil%></td>	
+		</tr>
+	</table>
+		
+		
+		<% end %>
+	</div>
+
+<table class="contact_table" width="100%">
+  
+  <tr>
+    
+    <td class="headingleft" width="50%">ID</td>
+    
+    
+	<td class="heading">Actions</td>
+  </tr>
+
+
+<% @transactions.each do |transaction| %>
+  <tr>
+    <td class= "dataleft"><%= link_to transaction.id, transaction%></td>
+    <td class="data">><%= link_to 'Edit', edit_transaction_path(transaction) %> | 
+    <%= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br>
+
+
+<br />
+<%= will_paginate @transactions%>
+

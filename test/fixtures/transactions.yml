@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  donation_ID: 1
+  order_ID: 1
+  subscription_ID: 1
+  shipping_details_ID: 1
+  shipment_ID: 1
+  staff_ID: 1
+
+two:
+  donation_ID: 1
+  order_ID: 1
+  subscription_ID: 1
+  shipping_details_ID: 1
+  shipment_ID: 1
+  staff_ID: 1

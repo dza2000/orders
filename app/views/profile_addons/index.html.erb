@@ -1,0 +1,30 @@
+<h1>Listing profile_addons</h1>
+
+<table>
+  <tr>
+    <th>Contact</th>
+    <th>Age</th>
+    <th>Birth month</th>
+    <th>Station</th>
+    <th>Married</th>
+    <th>S1 cluster</th>
+  </tr>
+
+<% @profile_addons.each do |profile_addon| %>
+  <tr>
+    <td><%=h profile_addon.contact_id %></td>
+    <td><%=h profile_addon.age %></td>
+    <td><%=h profile_addon.birth_month %></td>
+    <td><%=h profile_addon.station_id %></td>
+    <td><%=h profile_addon.married %></td>
+    <td><%=h profile_addon.s1_cluster %></td>
+    <td><%= link_to 'Show', profile_addon %></td>
+    <td><%= link_to 'Edit', edit_profile_addon_path(profile_addon) %></td>
+    <td><%= link_to 'Destroy', profile_addon, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New profile_addon', new_profile_addon_path %>

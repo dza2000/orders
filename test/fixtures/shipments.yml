@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  staff_ID: 1
+  tracking_number: MyString
+  transaction_ID: 1
+
+two:
+  staff_ID: 1
+  tracking_number: MyString
+  transaction_ID: 1

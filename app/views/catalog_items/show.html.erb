@@ -1,0 +1,72 @@
+<p>
+  <b>Name:</b>
+  <%=h @catalog_item.name %>
+</p>
+<p>
+	<%= image_tag @catalog_item.image.url%>
+
+<p>
+  <b>Description:</b>
+  <%=h @catalog_item.description %>
+</p>
+
+<p>
+  <b>Sku:</b>
+  <%=h @catalog_item.sku %>
+</p>
+
+<p>
+  <b>Unit price:</b>
+  <%=h @catalog_item.unit_price %>
+</p>
+
+<p>
+  <b>Do not display price:</b>
+  <%=h @catalog_item.do_not_display_price %>
+</p>
+
+<p>
+  <b>Taxable:</b>
+  <%=h @catalog_item.taxable %>
+</p>
+
+<p>
+  <b>Fmv:</b>
+  <%=h @catalog_item.FMV %>
+</p>
+
+<p>
+  <b>Requires shipping:</b>
+  <%=h @catalog_item.requires_shipping %>
+</p>
+
+<p>
+  <b>Shipping weight:</b>
+  <%=h @catalog_item.shipping_weight %>
+</p>
+
+<p>
+  <b>Flat rate shipping handling:</b>
+  <%=h @catalog_item.flat_rate_shipping_handling %>
+</p>
+
+<p>
+  <b>Item level discounts:</b>
+  <%=h @catalog_item.item_level_discounts %>
+</p>
+
+<p>
+  <b>Front end:</b>
+  <%=h @catalog_item.front_end %>
+</p>
+
+
+
+<p>
+  <b>Category id:</b>
+  <%=h @catalog_item.category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_catalog_item_path(@catalog_item) %> |
+<%= link_to 'Back', catalog_items_path %>

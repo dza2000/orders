@@ -1,0 +1,24 @@
+<h1>Editing received_issue</h1>
+
+<% form_for(@received_issue) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :subscription_ID %><br />
+    <%= f.text_field :subscription_ID %>
+  </p>
+  <p>
+    <%= f.label :issue_published_ID %><br />
+    <%= f.text_field :issue_published_ID %>
+  </p>
+  <p>
+    <%= f.label :ship %><br />
+    <%= f.check_box :ship %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @received_issue %> |
+<%= link_to 'Back', received_issues_path %>

@@ -1,0 +1,23 @@
+<h1>New subscription for <%= @subscription.transaction.contact.first_name %> <%= @subscription.transaction.contact.last_name%></h1>
+
+
+<% form_for(@subscription, :html=>{ :name=>"subscription"}) do |f| %>
+  <%= f.error_messages %>
+  
+  
+   <%= f.hidden_field :contact_id, :value=> @subscription.transaction.contact_id%>
+   <%= f.hidden_field :transaction_id %>
+  
+  <p>
+    <%= f.label :subscription_type_id %><br />
+    <%= collection_select(:subscription, :subscription_type_id, SubscriptionType.find(:all), :id, :name, html_options={:name=>"select"}) %>
+  </p>
+  
+  
+  <p>
+    <%= button_to_function "Save", "$('new_subscription').submit(); window.opener.location.reload();window.close()"   %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', subscriptions_path %>
+

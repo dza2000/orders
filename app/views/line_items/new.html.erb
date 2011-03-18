@@ -1,0 +1,26 @@
+<h1>New line_item</h1>
+
+<% form_for(@line_item, :html=>{:id=>"my_form"}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :catalog_item_id %><br />
+    <%= collection_select (:line_item, :catalog_item_id, CatalogItem.find(:all), :id, :full_name) %>
+	</p>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.label :ship %><br />
+    <%= f.check_box :ship %>
+  </p>
+  <p>
+    <%= f.label :order_id %><br />
+    <%= f.text_field :order_id %>
+  </p>
+  <p>
+    <%= button_to_function "Add to Order", "$('my_form').submit(); window.opener.location.reload();window.close()"   %>
+  </p>
+<% end %>
+

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  transaction_ID: 1
+  line_ID: 1
+  static_shipping_fee: 9.99
+  static_tax: 9.99
+  total: 9.99
+
+two:
+  transaction_ID: 1
+  line_ID: 1
+  static_shipping_fee: 9.99
+  static_tax: 9.99
+  total: 9.99

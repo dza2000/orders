@@ -1,0 +1,24 @@
+<h1>Listing payments_aches</h1>
+
+<table>
+  <tr>
+    <th>Payment</th>
+    <th>Account mask</th>
+    <th>Routing mask</th>
+  </tr>
+
+<% @payments_aches.each do |payments_ach| %>
+  <tr>
+    <td><%=h payments_ach.payment_id %></td>
+    <td><%=h payments_ach.account_mask %></td>
+    <td><%=h payments_ach.routing_mask %></td>
+    <td><%= link_to 'Show', payments_ach %></td>
+    <td><%= link_to 'Edit', edit_payments_ach_path(payments_ach) %></td>
+    <td><%= link_to 'Destroy', payments_ach, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New payments_ach', new_payments_ach_path %>

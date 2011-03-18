@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  transaction_ID: 1
+  first_name: MyString
+  last_name: MyString
+  address_line1: MyString
+  address_line2: MyString
+  city: MyString
+  state_ID: 1
+  province: MyString
+  country_ID: 1
+  shipping_method: MyString
+
+two:
+  transaction_ID: 1
+  first_name: MyString
+  last_name: MyString
+  address_line1: MyString
+  address_line2: MyString
+  city: MyString
+  state_ID: 1
+  province: MyString
+  country_ID: 1
+  shipping_method: MyString

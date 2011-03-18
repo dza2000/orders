@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  line1: MyString
+  line2: MyString
+  city: MyString
+  state_ID: 1
+  country_ID: 1
+  type: MyString
+  is_primary: false
+  contact_ID: 1
+
+two:
+  line1: MyString
+  line2: MyString
+  city: MyString
+  state_ID: 1
+  country_ID: 1
+  type: MyString
+  is_primary: false
+  contact_ID: 1

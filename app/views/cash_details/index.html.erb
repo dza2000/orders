@@ -1,0 +1,22 @@
+<h1>Listing cash_details</h1>
+
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Payment id</th>
+  </tr>
+
+<% @cash_details.each do |cash_detail| %>
+  <tr>
+    <td><%=h cash_detail.amount %></td>
+    <td><%=h cash_detail.payment_ID %></td>
+    <td><%= link_to 'Show', cash_detail %></td>
+    <td><%= link_to 'Edit', edit_cash_detail_path(cash_detail) %></td>
+    <td><%= link_to 'Destroy', cash_detail, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cash_detail', new_cash_detail_path %>

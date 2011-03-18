@@ -1,0 +1,43 @@
+<p>
+  <b>Last name:</b>
+  <%=h @staff.last_name %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%=h @staff.first_name %>
+</p>
+
+<p>
+  <b>Create date:</b>
+  <%=h @staff.create_date %>
+</p>
+
+<p>
+  <b>Expire date:</b>
+  <%=h @staff.expire_date %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @staff.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @staff.password %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%=h @staff.role %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%=h @staff.username %>
+</p>
+
+
+<%= link_to 'Edit', edit_staff_path(@staff) %> |
+<%= link_to 'Back', staffs_path %>

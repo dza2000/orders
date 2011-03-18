@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @published_issue.name %>
+</p>
+
+<p>
+  <b>Volume:</b>
+  <%=h @published_issue.volume %>
+</p>
+
+<p>
+  <b>Issue:</b>
+  <%=h @published_issue.issue %>
+</p>
+
+<p>
+  <b>Pull date:</b>
+  <%=h @published_issue.pull_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_published_issue_path(@published_issue) %> |
+<%= link_to 'Back', published_issues_path %>

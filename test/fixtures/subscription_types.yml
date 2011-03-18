@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  number_of_issues: 1
+  unit_cost: 9.99
+
+two:
+  name: MyString
+  number_of_issues: 1
+  unit_cost: 9.99

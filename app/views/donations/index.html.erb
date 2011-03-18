@@ -1,0 +1,23 @@
+<h1>Donations</h1>
+<% form_for :dump, :url=>{:controller=>"donations", :action=>"csv_import"}, :html => { :multipart => true } do |f| -%>
+ <table>
+   <tr>
+     <td>
+      <label for="dump_file">
+        <b>Import a CSV File :</b>
+      </label>
+     </td>
+     <td >
+       <%= f.file_field :file -%>
+     </td>
+   </tr>
+   <tr>
+     <td colspan='2'>
+       <%= submit_tag 'Submit' -%>
+     </td>
+   </tr>
+ </table>
+<% end -%>
+
+
+<%= link_to 'New donation', new_donation_path %>

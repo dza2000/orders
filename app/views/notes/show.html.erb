@@ -1,0 +1,23 @@
+<p>
+  <b>Subject:</b>
+  <%=h @note.subject %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @note.body %>
+</p>
+
+<p>
+  <b>Staff:</b>
+  <%=h @note.staff_id %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%=h @note.contact_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>

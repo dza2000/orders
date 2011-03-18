@@ -1,0 +1,24 @@
+<h1>Listing received_issues</h1>
+
+<table>
+  <tr>
+    <th>Subscription id</th>
+    <th>Issue published id</th>
+    <th>Ship</th>
+  </tr>
+
+<% @received_issues.each do |received_issue| %>
+  <tr>
+    <td><%=h received_issue.subscription_ID %></td>
+    <td><%=h received_issue.issue_published_ID %></td>
+    <td><%=h received_issue.ship %></td>
+    <td><%= link_to 'Show', received_issue %></td>
+    <td><%= link_to 'Edit', edit_received_issue_path(received_issue) %></td>
+    <td><%= link_to 'Destroy', received_issue, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New received_issue', new_received_issue_path %>

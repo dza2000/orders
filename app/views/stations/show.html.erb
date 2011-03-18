@@ -1,0 +1,47 @@
+<p>
+  <b>Call letters:</b>
+  <%=h @station.call_letters %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%=h @station.frequency %>
+</p>
+
+<p>
+  <b>Band:</b>
+  <%=h @station.band %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @station.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @station.state.abbrev %>
+</p>
+
+<p>
+  <b>Zip code:</b>
+  <%=h @station.zip_code %>
+</p>
+
+
+
+<p>
+  <b>Days:</b>
+  <%=h @station.days %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%=h @station.time %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_station_path(@station) %> |
+<%= link_to 'Back', stations_path %>

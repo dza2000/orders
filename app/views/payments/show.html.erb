@@ -1,0 +1,33 @@
+<p>
+  <b>Transaction:</b>
+  <%=h @payment.transaction_id %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%=h @payment.amount %>
+</p>
+
+<p>
+  <b>Payment method:</b>
+  <%=h @payment.payment_method %>
+</p>
+
+<p>
+  <b>Payment date:</b>
+  <%=h @payment.payment_date %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @payment.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h @payment.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

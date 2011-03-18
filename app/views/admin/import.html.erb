@@ -1,0 +1,84 @@
+<h1>Import Donations</h1>
+<% form_for :dump, :url=>{:controller=>"donations", :action=>"csv_import"}, :html => { :multipart => true } do |f| -%>
+ <table>
+   <tr>
+     <td>
+      <label for="dump_file">
+        <b>Import a CSV File :</b>
+      </label>
+     </td>
+     <td >
+       <%= f.file_field :file -%>
+     </td>
+   </tr>
+   <tr>
+     <td colspan='2'>
+       <%= submit_tag 'Submit' -%>
+     </td>
+   </tr>
+ </table>
+<% end -%>
+
+<h1>Import Orders</h1>
+<% form_for :dump, :url=>{:controller=>"orders", :action=>"csv_import"}, :html => { :multipart => true } do |f| -%>
+ <table>
+   <tr>
+     <td>
+      <label for="dump_file">
+        <b>Import a CSV File :</b>
+      </label>
+     </td>
+     <td >
+       <%= f.file_field :file -%>
+     </td>
+   </tr>
+   <tr>
+     <td colspan='2'>
+       <%= submit_tag 'Submit' -%>
+     </td>
+   </tr>
+ </table>
+<% end -%>
+
+<h1>Import Subscriptions</h1>
+
+<% form_for :dump, :url=>{:controller=>"subscriptions", :action=>"csv_import"}, :html => { :multipart => true } do |f| -%>
+ <table>
+   <tr>
+     <td>
+      <label for="dump_file">
+        <b>Import a CSV File :</b>
+      </label>
+     </td>
+     <td >
+       <%= f.file_field :file -%>
+     </td>
+   </tr>
+   <tr>
+     <td colspan='2'>
+       <%= submit_tag 'Submit' -%>
+     </td>
+   </tr>
+ </table>
+<% end -%>
+
+<h1>Import Custom Fields</h1>
+<% form_for :dump, :url=>{:controller=>"donation_lines", :action=>"csv_import"}, :html => { :multipart => true } do |f| -%>
+ <table>
+   <tr>
+     <td>
+      <label for="dump_file">
+        <b>Import a CSV File :</b>
+      </label>
+     </td>
+     <td >
+       <%= f.file_field :file -%>
+     </td>
+   </tr>
+   <tr>
+     <td colspan='2'>
+       <%= submit_tag 'Submit' -%>
+     </td>
+   </tr>
+ </table>
+<% end -%>

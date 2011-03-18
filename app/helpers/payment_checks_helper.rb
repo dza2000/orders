@@ -1,0 +1,2 @@
+module PaymentChecksHelper
+end

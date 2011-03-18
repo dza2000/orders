@@ -1,0 +1,134 @@
+<div id="transaction_module_head">
+Editing transaction for <%= @transaction.contact.first_name %> <%= @transaction.contact.last_name %>
+</div>
+<div id="transaction_nav">
+	<%= link_to 'New Subscription', new_contact_transaction_subscription_path(@transaction.contact_id, @transaction), :target=>"_blank"%> | 
+<%= link_to 'New Donation', new_contact_transaction_donation_path(@transaction.contact_id, @transaction), :target=>"_blank" %> | 
+<%= link_to 'New Estore Order', new_contact_transaction_order_path(@transaction.contact_id, @transaction), :target=>"_blank" %>
+	</div>
+<div id="transaction_form">
+<% form_for(@transaction) do |f| %>
+  <%= f.error_messages %>
+  
+    <%= f.hidden_field :contact_id  %>
+  
+  
+  
+    <%= f.hidden_field :staff_id %>
+  
+  
+ 
+
+</div>
+<br>
+<div id="addressinfo">
+	<b>Ship to:</b>
+	<br>
+	<%= @transaction.address.line1%><br>
+	<% if @transaction.address.line2 and @transaction.address.line2 !="" -%>
+	<%= @transaction.address.line2%><br>
+	<% else -%>
+	<% end -%>
+	<%= @transaction.address.city %>, <%= @transaction.address.stateAbbrev %> <%= @transaction.address.zip%>
+	<br>
+	<%= link_to 'Edit Address', edit_address_path, :target => "_blank" %>
+	</div>
+	<br>
+<div id="transaction-subscriptions">
+	<b>Subscriptions</b><br>
+	<table width=600 border="1px-solid-black">
+		<tr>
+			<td><b>Subscription Type</b></td>
+			<td><b>Number of Issues</b></td>
+			<td><b>Price</b></td>
+			<td width=100px><b>Actions</b></td>
+		</tr>		
+	<% for subscription in @transaction.subscriptions %>
+	<tr>
+		<td><%= link_to subscription.subscription_name, edit_contact_transaction_subscription_path(@transaction.contact_id, @transaction, :id=>subscription.id), :target=>"_blank" %></td>
+		<td><%= subscription.quantity %></td>
+		<td><%= number_to_currency(subscription.unit_cost)%></td>
+		<td><center><%= link_to 'Destroy', subscription, :confirm => 'Are you sure?', :method => :delete %></center></td>
+	</tr>    
+	<% end %>
+	<tr>
+		<td><b>Totals:</b></td>
+		<td><%= @transaction.subscriptions.sum(:quantity) %></td>
+		<td><%= number_to_currency(@transaction.subscriptions.sum(:unit_cost))%></td>
+	</tr>
+	</table>
+	
+	</div>
+	<br>
+	
+	<div id="transaction-donations">
+		<b>Donations</b><br>
+		<table width=600 border="1px-solid-black">
+			<% if @transaction.donations.empty? %>
+			<tr><td><b>Donation Amount</b></td></tr>
+			<tr><td>$0</td></tr>
+			<% else %>
+			<% for donation in @transaction.donations %>
+			
+			<tr>
+				<td><b>Donation Name</b></td>
+				<td><b>Sku</b></td>
+				<td><b>Amount</b></td>
+				<td><b>Actions</b></td>
+			</tr>
+			<% for donation_line in donation.donation_lines %>
+			<tr><td><%= link_to donation_line.name, edit_contact_transaction_donation_donation_line_path(@transaction.contact_id,@transaction.id,@transaction.donations.id, donation_line), :target=>"_blank" %></td>
+				<td><%= donation_line.sku %></td>
+				<td><%= number_to_currency(donation_line.donation_amount) %></td>
+				<td><center><%= link_to 'Delete', donation_line, :confirm => 'Are you sure?', :method => :delete %></center></td>
+				</tr>
+				
+				<% end %>
+				<tr>
+					<td colspan=2><b>Total Donation</b></td><td><%= number_to_currency(donation.donation_amount) %></td>
+				</tr>
+			<% end %>
+			
+			
+			<% end %>
+			</table>
+			
+			
+	</div>
+	<br>
+	<div id="transaction-orders">
+		<b>Product Orders</b><br>
+		<table width=600 border="1px-solid-black">
+			<% for order in @transaction.orders %>
+			<tr><td><b>SKU</b></td>
+			<td><b>Product Name</b></td>
+			<td><b>Value</b></td>
+			<td><b>Quantity</b></td>
+			<td><b>Actions</b></td>
+			</tr>
+			<% for line_item in order.line_items %>
+			<tr>
+				<td><%= line_item.catalog_item.sku%></td>
+				<td><%= link_to line_item.catalog_item.name, edit_contact_transaction_order_line_item_path(@transaction.contact_id,@transaction.id,@transaction.orders.id, line_item), :target=>"_blank"%></td>
+				<td><%= number_to_currency(line_item.price) %></td>
+				<td><%= line_item.quantity%></td>
+				<td><%= link_to 'Delete', line_item, :confirm => 'Are you sure?', :method => :delete %></center></td>
+				</tr>
+				
+				<% end %>
+				
+				</table>
+				<%= link_to "Add another item", new_contact_transaction_order_line_item_path(@transaction.contact_id,@transaction.id, order.id), :target=>"_blank"%>
+				<br>
+				Order Total: <%= number_to_currency(order.total)%>
+				<% end %>
+	</div>
+	<p>
+		<%= f.label :print%><br>
+		<%= f.check_box :print %>
+	
+<p>
+    <%= f.submit 'Save This Transaction' %>
+  </p>
+  
+<% end %>

@@ -1,0 +1,33 @@
+<h1>Editing donation</h1>
+
+<% form_for(@donation) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :contact_ %><br />
+    <%= f.text_field :contact_id %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+    <p>
+    <%= f.label :donation_amount %><br />
+    <%= f.text_field :donation_amount %>
+  </p>
+  
+  <p>
+    <%= f.label :transaction_id %><br />
+    <%= f.text_field :transaction_id %>
+  </p>
+  <p>
+    <%= f.label :ship %><br />
+    <%= f.check_box :ship %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @donation %> |
+<%= link_to 'Back', donations_path %>

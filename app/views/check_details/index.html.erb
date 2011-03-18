@@ -1,0 +1,24 @@
+<h1>Listing check_details</h1>
+
+<table>
+  <tr>
+    <th>Payment id</th>
+    <th>Check number</th>
+    <th>Amount</th>
+  </tr>
+
+<% @check_details.each do |check_detail| %>
+  <tr>
+    <td><%=h check_detail.payment_ID %></td>
+    <td><%=h check_detail.check_number %></td>
+    <td><%=h check_detail.amount %></td>
+    <td><%= link_to 'Show', check_detail %></td>
+    <td><%= link_to 'Edit', edit_check_detail_path(check_detail) %></td>
+    <td><%= link_to 'Destroy', check_detail, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New check_detail', new_check_detail_path %>

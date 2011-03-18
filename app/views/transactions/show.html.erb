@@ -1,0 +1,103 @@
+<h1>Transaction <%= @transaction.id %></h1>
+<div id="customer_info_transaction">
+<h2>Customer Information</h2>
+<%= @transaction.contact.first_name %>
+<%= @transaction.contact.last_name %>
+<br>
+<% if @transaction.address_id == 0 or @transaction.address.nil? or @transaction.address.line1 == ""%>
+<% for address in @transaction.contact.addresses[(0...1)] do %>
+<%= address.line1 %><br>
+<%= address.line2 %><br>
+<%= address.city %>, <%= address.stateAbbrev %> <%= address.zip %>
+<% end %>
+<% else %>
+<%= @transaction.address.line1%><br>
+<%= @transaction.address.line2%><br>
+<%= @transaction.address.city %>, <%= @transaction.address.stateAbbrev %> <%= @transaction.address.zip %>
+<% end %>
+</div>
+<div id="product_order">
+<% if @transaction.orders.empty? %>
+<% else %>
+<h2>Product Orders</h2>
+
+<table width="600px">
+	<tr>
+		<td><b>SKU</b></td>
+		<td><b>Product Name</b></td>
+		<td><b>Quantity</b></td>
+		<td><b>Price</b></td>
+	</tr>
+	<% for order in @transaction.orders %>		
+<% for line_item in order.line_items %>
+<tr>
+	<td><%= line_item.sku %></td>
+	<td><%= line_item.catalog_item.name%></td>
+	<td><%= line_item.quantity %></td>
+	<td><%= number_to_currency(line_item.price) %></td>
+	</tr>
+<% end %>
+<tr><td></td>
+<td><em><b>Total</b></em></td>
+<td></td>
+<td><%= number_to_currency(order.total) %></td></tr>
+</table>
+
+<% end %>
+</div>
+
+<br>
+<% end %>
+<% if @transaction.subscriptions.empty? %>
+<% else %>
+<div id="subscription_order">
+	
+	<h2>Subscription Information</h2>
+	
+	<table width="600px">
+		<tr>
+			<td>Subscription Type</td>
+			<td>Number of Issues</td>
+			<td>Subscription Cost</td>
+		</tr>	
+<% for subscription in @transaction.subscriptions%>
+<tr>
+		<td><%= subscription.subscription_name %></td>
+		<td><%= subscription.quantity %></td>
+		<td><%= number_to_currency(subscription.unit_cost) %></td>
+</tr>
+<% end %>
+</table>
+</div>
+<% end %>
+<% if @transaction.donations.empty? %>
+<% else %>
+<div id="donation_order">
+	
+	<h2>Donations</h2>
+	<table width="600px">
+		<tr>
+			<td><b>Number</b></td>
+			<td><b>Donation Initiative</b></td>
+			
+			<td><b>Amount</b></td>
+		</tr>
+		<% for donation in @transaction.donations %>
+		<tr>
+			<td><%= donation.id %></td>
+			<% for donation_line in donation.donation_lines %>
+			<td><%= donation_line.name %></td>
+			<td><%= number_to_currency(donation.donation_amount) %></td>
+			<% end %>
+		</tr>
+	</table>
+<% end %>
+</div>
+<% end %>
+<br>
+<h2>Transaction Total:  <%= number_to_currency(@transaction.practice) %></h2>
+<%= link_to_function 'Print this page', "javascript:print()"%>
+
+<p>
+<center><%= link_to 'Edit Transaction', edit_transaction_path %> |
+<%= link_to 'Back to Contact', contact_path(@transaction.contact) %></center>

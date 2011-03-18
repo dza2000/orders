@@ -1,0 +1,16 @@
+<h1>Editing transaction_receipt</h1>
+
+<% form_for(@transaction_receipt) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :transaction_id %><br />
+    <%= f.text_field :transaction_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @transaction_receipt %> |
+<%= link_to 'Back', transaction_receipts_path %>

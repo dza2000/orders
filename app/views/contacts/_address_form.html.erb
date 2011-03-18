@@ -1,0 +1,34 @@
+
+<p class="fields">
+	
+  	 <%= f.label :line1, "Line 1" %>
+     <%= f.text_field :line1 %>
+  
+     <%= f.label :line2, "Line 2" %>
+     <%= f.text_field :line2 %>
+  
+  
+     <%= f.label :city, "City" %>
+     <%= f.text_field :city %>
+  
+  	<%= f.label 'State' %>
+  	<%= f.collection_select(:stateAbbrev, State.all, :abbrev, :abbrev) %>
+  <%= f.label 'Province (if applicable)' %>
+  <%= f.text_field :province, :size => 4 %>
+     <%= f.label :zip, "Zip Code" %>
+     <%= f.text_field :zip, :size=>4 %>
+  
+     <%= f.label :country_id, "Country" %>
+     <%= f.collection_select(:countryAbbrev, Country.all, :country_name, :country_name) %>
+  
+     <%= f.label :address_type, "Home or Business" %>
+     <%= f.select(:address_type, Address::ADDRESSTYPE)  %>
+  
+    <%= f.label :is_primary %>
+    <%= f.check_box :is_primary %>
+  
+  	<span style="float:right;margin-right:20px;"><%= link_to_remove_fields "remove address", f%></span>
+	
+	
+  </p>
+  

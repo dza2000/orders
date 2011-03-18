@@ -1,0 +1,38 @@
+<h1>Listing stations</h1>
+
+<table>
+  <tr>
+    <th>Call letters</th>
+    <th>Frequency</th>
+    <th>Band</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip code</th>
+    
+    <th>Days</th>
+    <th>Time</th>
+    
+  </tr>
+
+<% @stations.each do |station| %>
+  <tr>
+    <td><%=h station.call_letters %></td>
+    <td><%=h station.frequency %></td>
+    <td><%=h station.band %></td>
+    <td><%=h station.city %></td>
+    <td><%= station.state_id %></td>
+    <td><%=h station.zip_code %></td>
+    
+    <td><%=h station.days %></td>
+    <td><%=h station.time %></td>
+    
+    <td><%= link_to 'Show', station %></td>
+    <td><%= link_to 'Edit', edit_station_path(station) %></td>
+    <td><%= link_to 'Destroy', station, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New station', new_station_path %>

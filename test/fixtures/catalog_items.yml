@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  SKU: MyString
+  unit_price: 9.99
+  do_not_display_price: false
+  taxable: false
+  FMV: 9.99
+  requires_shipping: false
+  shipping_weight: 9.99
+  flat_rate_shipping_handling: 9.99
+  item_level_discounts: 9.99
+  front_end: false
+  inventory_ID: 1
+  category_ID: 1
+
+two:
+  name: MyString
+  description: MyString
+  SKU: MyString
+  unit_price: 9.99
+  do_not_display_price: false
+  taxable: false
+  FMV: 9.99
+  requires_shipping: false
+  shipping_weight: 9.99
+  flat_rate_shipping_handling: 9.99
+  item_level_discounts: 9.99
+  front_end: false
+  inventory_ID: 1
+  category_ID: 1

@@ -1,0 +1,51 @@
+<div id="contact_whitespace">
+<div id="contact_list_content">
+	<div id="contact_search">
+		<h3>Search By:</h3>
+	<% form_for @search do |f| %>
+	<table>
+		<tr>
+		<td><b><%= f.label :first_name_like, "First Name"%></b></td>
+		<td><b><%= f.label :last_name_like, "Last Name" %></b></td>
+		<td><b><%= f.label :id_like, "Contact ID#"%></b></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :first_name_like, :size=>8 %></td>
+			<td><%= f.text_field :last_name_like, :size=>8 %></td>
+			<td><%= f.text_field :id_like, :size=>8%></td>
+		</tr>
+	</table>
+		
+		<%= submit_tag "Search", :name=> nil%>
+		<% end %>
+	</div>
+<div id="contact_module_head">Contact List</div>
+
+<table class="contact_table" width="100%">
+  
+  <tr>
+    
+    <td class="headingleft" width="50%">Name</td>
+    
+    
+	<td class="heading">Actions</td>
+  </tr>
+<tbody>
+<% @contacts.each do |contact| %>
+  <tr>
+    <td class= "dataleft"><a href="/contacts/<%= contact.id %>"><%= contact.full_name %></a></td>
+    
+	<td class="data"><%= link_to 'Edit', edit_contact_path(contact) %> |
+    <%= link_to 'Delete', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+</tbody>
+</table>
+
+
+</div>
+
+
+<%= will_paginate @contacts %>
+</div>

@@ -1,0 +1,24 @@
+<h1>Listing giving_groups</h1>
+
+<table>
+  <tr>
+    <th>Contact id</th>
+    <th>Name</th>
+    <th>Start date</th>
+  </tr>
+
+<% @giving_groups.each do |giving_group| %>
+  <tr>
+    <td><%=h giving_group.contact_ID %></td>
+    <td><%=h giving_group.name %></td>
+    <td><%=h giving_group.start_date %></td>
+    <td><%= link_to 'Show', giving_group %></td>
+    <td><%= link_to 'Edit', edit_giving_group_path(giving_group) %></td>
+    <td><%= link_to 'Destroy', giving_group, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New giving_group', new_giving_group_path %>

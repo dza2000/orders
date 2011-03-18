@@ -1,0 +1,32 @@
+<h1>Editing source_code</h1>
+
+<% form_for(@source_code) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :source_code_type_id %><br />
+    <%= f.text_field :source_code_type_id %>
+  </p>
+  <p>
+    <%= f.label :staff_id %><br />
+    <%= f.text_field :staff_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @source_code %> |
+<%= link_to 'Back', source_codes_path %>

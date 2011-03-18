@@ -1,0 +1,4 @@
+<% @catalog_items.each do |item| %>
+<%= item.sku %><br>
+<%= button_to "Add to Cart", :action => 'add_to_cart', :id => item %>
+<% end %>

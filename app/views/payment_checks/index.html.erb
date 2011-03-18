@@ -1,0 +1,24 @@
+<h1>Listing payment_checks</h1>
+
+<table>
+  <tr>
+    <th>Payment</th>
+    <th>Check number</th>
+    <th>Check date</th>
+  </tr>
+
+<% @payment_checks.each do |payment_check| %>
+  <tr>
+    <td><%=h payment_check.payment_id %></td>
+    <td><%=h payment_check.check_number %></td>
+    <td><%=h payment_check.check_date %></td>
+    <td><%= link_to 'Show', payment_check %></td>
+    <td><%= link_to 'Edit', edit_payment_check_path(payment_check) %></td>
+    <td><%= link_to 'Destroy', payment_check, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New payment_check', new_payment_check_path %>

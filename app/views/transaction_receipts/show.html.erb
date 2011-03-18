@@ -1,0 +1,8 @@
+<p>
+  <b>Transaction:</b>
+  <%=h @transaction_receipt.transaction_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_transaction_receipt_path(@transaction_receipt) %> |
+<%= link_to 'Back', transaction_receipts_path %>

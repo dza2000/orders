@@ -1,0 +1,21 @@
+
+<p>
+  <b>Quantity:</b>
+  <%=h @line_item.quantity %>
+</p>
+
+<p>
+  <b>Ship:</b>
+  <%=h @line_item.ship %>
+</p>
+
+<p>
+  <b>Order id:</b>
+  <%=h @line_item.order_id %>
+</p>
+
+
+<%= @line_item.catalog_item.sku %>
+
+<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Back', line_items_path %>

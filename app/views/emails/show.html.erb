@@ -1,0 +1,28 @@
+<p>
+  <b>Address:</b>
+  <%=h @email.address %>
+</p>
+
+<p>
+  <b>Format:</b>
+  <%=h @email.format %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @email.type %>
+</p>
+
+<p>
+  <b>Is primary:</b>
+  <%=h @email.is_primary %>
+</p>
+
+<p>
+  <b>Contact id:</b>
+  <%=h @email.contact_ID %>
+</p>
+
+
+<%= link_to 'Edit', edit_email_path(@email) %> |
+<%= link_to 'Back', emails_path %>

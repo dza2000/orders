@@ -1,0 +1,30 @@
+<h1>Listing payments</h1>
+
+<table>
+  <tr>
+    <th>Transaction</th>
+    <th>Amount</th>
+    <th>Payment method</th>
+    <th>Payment date</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+<% @payments.each do |payment| %>
+  <tr>
+    <td><%=h payment.transaction_id %></td>
+    <td><%=h payment.amount %></td>
+    <td><%=h payment.payment_method %></td>
+    <td><%=h payment.payment_date %></td>
+    <td><%=h payment.created_at %></td>
+    <td><%=h payment.updated_at %></td>
+    <td><%= link_to 'Show', payment %></td>
+    <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+    <td><%= link_to 'Destroy', payment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New payment', new_payment_path %>

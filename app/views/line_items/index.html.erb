@@ -1,0 +1,22 @@
+<h1>Listing line_items</h1>
+
+<% form_for :dump, :url=>{:controller=>"line_items", :action=>"csv_import"}, :html => { :multipart => true } do |f| -%>
+ <table>
+   <tr>
+     <td>
+      <label for="dump_file">
+        <b>Import a CSV File :</b>
+      </label>
+     </td>
+     <td >
+       <%= f.file_field :file -%>
+     </td>
+   </tr>
+   <tr>
+     <td colspan='2'>
+       <%= submit_tag 'Submit' -%>
+     </td>
+   </tr>
+ </table>
+<% end -%>
+<%= link_to 'New line_item', new_line_item_path %>

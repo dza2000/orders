@@ -1,0 +1,27 @@
+<h1>Listing transactions</h1>
+
+<table>
+  <tr>
+    <th>contact ID</th>
+    
+    
+    <th>Transaction ID</th>
+  </tr>
+
+<% @transactions.each do |transaction| %>
+  <tr>
+    <td><%=h transaction.contact_id%></td>
+    
+    
+    
+	<td><%=h transaction.id%></td>
+    <td><%= link_to 'Show', transaction %></td>
+    <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+    <td><%= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  subscription_ID: 1
+  issue_published_ID: 1
+  ship: false
+
+two:
+  subscription_ID: 1
+  issue_published_ID: 1
+  ship: false

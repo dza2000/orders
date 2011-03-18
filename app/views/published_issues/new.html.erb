@@ -1,0 +1,27 @@
+<h1>New published_issue</h1>
+
+<% form_for(@published_issue) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :volume %><br />
+    <%= f.text_field :volume %>
+  </p>
+  <p>
+    <%= f.label :issue %><br />
+    <%= f.text_field :issue %>
+  </p>
+  <p>
+    <%= f.label :pull_date %><br />
+    <%= f.date_select :pull_date %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', published_issues_path %>

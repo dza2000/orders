@@ -1,0 +1,18 @@
+<p>
+  <b>Contact id:</b>
+  <%=h @giving_group.contact_ID %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @giving_group.name %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @giving_group.start_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_giving_group_path(@giving_group) %> |
+<%= link_to 'Back', giving_groups_path %>

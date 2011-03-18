@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  prefix: 1
+  phone_number: 1
+  extension: 1
+  type: MyString
+  is_primary: false
+  contact_ID: MyString
+
+two:
+  prefix: 1
+  phone_number: 1
+  extension: 1
+  type: MyString
+  is_primary: false
+  contact_ID: MyString

@@ -1,0 +1,13 @@
+<p>
+  <b>Amount:</b>
+  <%=h @cash_detail.amount %>
+</p>
+
+<p>
+  <b>Payment id:</b>
+  <%=h @cash_detail.payment_ID %>
+</p>
+
+
+<%= link_to 'Edit', edit_cash_detail_path(@cash_detail) %> |
+<%= link_to 'Back', cash_details_path %>

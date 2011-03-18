@@ -1,0 +1,28 @@
+<p>
+  <b>Payment:</b>
+  <%=h @payment_cc.payment_id %>
+</p>
+
+<p>
+  <b>Cc mask:</b>
+  <%=h @payment_cc.cc_mask %>
+</p>
+
+<p>
+  <b>Cc type:</b>
+  <%=h @payment_cc.cc_type %>
+</p>
+
+<p>
+  <b>Cc exp date:</b>
+  <%=h @payment_cc.cc_exp_date %>
+</p>
+
+<p>
+  <b>Cardholder name:</b>
+  <%=h @payment_cc.cardholder_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_payment_cc_path(@payment_cc) %> |
+<%= link_to 'Back', payment_ccs_path %>

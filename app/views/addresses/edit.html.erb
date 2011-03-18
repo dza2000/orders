@@ -1,0 +1,42 @@
+<h1>Editing address</h1>
+
+<% form_for(@address, :html=>{:id=>"my_form"}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :line1 %><br />
+    <%= f.text_field :line1 %>
+  </p>
+  <p>
+    <%= f.label :line2 %><br />
+    <%= f.text_field :line2 %>
+  </p>
+  
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+    
+  <%= f.label 'State' %>
+  	<%= f.collection_select(:stateAbbrev, State.all, :abbrev, :abbrev) %>
+  
+  <%= f.label :zip %><br />
+  <%= f.text_field :zip %>
+  </p>
+  <%= f.label 'Country' %>
+  	<%= f.collection_select(:countryAbbrev, Country.all, :country_name, :country_name) %>
+  
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </p>
+  
+  <p>
+    <%= f.label :contact_id %><br />
+    <%= f.text_field :contact_id %>
+  </p>
+  <p>
+    <%= button_to_function "Save", "$('my_form').submit(); window.opener.location.reload();window.close()"   %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @address %> |
+<%= link_to 'Back', addresses_path %>

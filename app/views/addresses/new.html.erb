@@ -1,0 +1,14 @@
+<h1>New address</h1>
+
+<% form_for(@address, :html=>{:id=>"my_form"}) do |f|  %>
+  <%= f.error_messages %>
+<%= render :partial => 'address_form', :locals =>{:f => f} %>
+  
+  
+  <p>
+  	<%= button_to_function "Save", "$('my_form').submit(); window.opener.location.reload();window.close()"   %>
+	
+
+<% end %>
+
+Testing the git.

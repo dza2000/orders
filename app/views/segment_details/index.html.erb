@@ -1,0 +1,22 @@
+<h1>Listing segment_details</h1>
+
+<table>
+  <tr>
+    <th>Contact id</th>
+    <th>Segment id</th>
+  </tr>
+
+<% @segment_details.each do |segment_detail| %>
+  <tr>
+    <td><%=h segment_detail.contact_ID %></td>
+    <td><%=h segment_detail.segment_ID %></td>
+    <td><%= link_to 'Show', segment_detail %></td>
+    <td><%= link_to 'Edit', edit_segment_detail_path(segment_detail) %></td>
+    <td><%= link_to 'Destroy', segment_detail, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New segment_detail', new_segment_detail_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  contact_id: 1
+  age: 1
+  birth_month: 1
+  station_id: 1
+  married: false
+  s1_cluster: MyString
+
+two:
+  contact_id: 1
+  age: 1
+  birth_month: 1
+  station_id: 1
+  married: false
+  s1_cluster: MyString

@@ -1,0 +1,31 @@
+<h1>New payment_cc</h1>
+
+<% form_for(@payment_cc) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :payment_id %><br />
+    <%= f.text_field :payment_id %>
+  </p>
+  <p>
+    <%= f.label :cc_mask %><br />
+    <%= f.text_field :cc_mask %>
+  </p>
+  <p>
+    <%= f.label :cc_type %><br />
+    <%= f.text_field :cc_type %>
+  </p>
+  <p>
+    <%= f.label :cc_exp_date %><br />
+    <%= f.date_select :cc_exp_date %>
+  </p>
+  <p>
+    <%= f.label :cardholder_name %><br />
+    <%= f.text_field :cardholder_name %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', payment_ccs_path %>

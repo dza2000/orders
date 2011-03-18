@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  payment_ID: 1
+  cc_mask: MyString
+  expiration_date: 2010-05-10
+  name_on_card: MyString
+  amount: 9.99
+  card_type: MyString
+
+two:
+  payment_ID: 1
+  cc_mask: MyString
+  expiration_date: 2010-05-10
+  name_on_card: MyString
+  amount: 9.99
+  card_type: MyString

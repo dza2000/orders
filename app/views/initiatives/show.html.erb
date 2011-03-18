@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @initiative.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @initiative.description %>
+</p>
+
+<p>
+  <b>Minimum donation:</b>
+  <%=h @initiative.minimum_donation %>
+</p>
+
+<p>
+  <b>Catalog item:</b>
+  <%=h @initiative.catalog_item_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_initiative_path(@initiative) %> |
+<%= link_to 'Back', initiatives_path %>

@@ -1,0 +1,68 @@
+<h1>Editing catalog_item</h1>
+
+<% form_for @catalog_item, :html => { :multipart=>true} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+  	<%= f.file_field :image %>
+  	</p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :sku %><br />
+    <%= f.text_field :sku %>
+  </p>
+  <p>
+    <%= f.label :unit_price %><br />
+    <%= f.text_field :unit_price %>
+  </p>
+  <p>
+    <%= f.label :do_not_display_price %><br />
+    <%= f.check_box :do_not_display_price %>
+  </p>
+  <p>
+    <%= f.label :taxable %><br />
+    <%= f.check_box :taxable %>
+  </p>
+  <p>
+    <%= f.label :FMV %><br />
+    <%= f.text_field :FMV %>
+  </p>
+  <p>
+    <%= f.label :requires_shipping %><br />
+    <%= f.check_box :requires_shipping %>
+  </p>
+  <p>
+    <%= f.label :shipping_weight %><br />
+    <%= f.text_field :shipping_weight %>
+  </p>
+  <p>
+    <%= f.label :flat_rate_shipping_handling %><br />
+    <%= f.text_field :flat_rate_shipping_handling %>
+  </p>
+  <p>
+    <%= f.label :item_level_discounts %><br />
+    <%= f.text_field :item_level_discounts %>
+  </p>
+  <p>
+    <%= f.label :front_end %><br />
+    <%= f.check_box :front_end %>
+  </p>
+  
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.text_field :category_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @catalog_item %> |
+<%= link_to 'Back', catalog_items_path %>

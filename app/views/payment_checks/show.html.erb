@@ -1,0 +1,18 @@
+<p>
+  <b>Payment:</b>
+  <%=h @payment_check.payment_id %>
+</p>
+
+<p>
+  <b>Check number:</b>
+  <%=h @payment_check.check_number %>
+</p>
+
+<p>
+  <b>Check date:</b>
+  <%=h @payment_check.check_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_payment_check_path(@payment_check) %> |
+<%= link_to 'Back', payment_checks_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  volume: 1
+  issue: 1
+  pull_date: 2010-05-06
+
+two:
+  name: MyString
+  volume: 1
+  issue: 1
+  pull_date: 2010-05-06

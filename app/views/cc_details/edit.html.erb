@@ -1,0 +1,36 @@
+<h1>Editing cc_detail</h1>
+
+<% form_for(@cc_detail) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :payment_ID %><br />
+    <%= f.text_field :payment_ID %>
+  </p>
+  <p>
+    <%= f.label :cc_mask %><br />
+    <%= f.text_field :cc_mask %>
+  </p>
+  <p>
+    <%= f.label :expiration_date %><br />
+    <%= f.date_select :expiration_date %>
+  </p>
+  <p>
+    <%= f.label :name_on_card %><br />
+    <%= f.text_field :name_on_card %>
+  </p>
+  <p>
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </p>
+  <p>
+    <%= f.label :card_type %><br />
+    <%= f.text_field :card_type %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @cc_detail %> |
+<%= link_to 'Back', cc_details_path %>

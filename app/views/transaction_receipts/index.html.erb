@@ -1,0 +1,20 @@
+<h1>Listing transaction_receipts</h1>
+
+<table>
+  <tr>
+    <th>Transaction</th>
+  </tr>
+
+<% @transaction_receipts.each do |transaction_receipt| %>
+  <tr>
+    <td><%=h transaction_receipt.transaction_id %></td>
+    <td><%= link_to 'Show', transaction_receipt %></td>
+    <td><%= link_to 'Edit', edit_transaction_receipt_path(transaction_receipt) %></td>
+    <td><%= link_to 'Destroy', transaction_receipt, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New transaction_receipt', new_transaction_receipt_path %>

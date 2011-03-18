@@ -1,0 +1,24 @@
+<p>
+  <b>Transaction id:</b>
+  <%=h @order.transaction_id %>
+</p>
+
+
+<p>
+  <b>Static shipping fee:</b>
+  <%=h @order.static_shipping_fee %>
+</p>
+
+<p>
+  <b>Static tax:</b>
+  <%=h @order.static_tax %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%=h @order.total %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

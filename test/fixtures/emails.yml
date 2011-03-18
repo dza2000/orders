@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  address: MyString
+  format: MyString
+  type: MyString
+  is_primary: false
+  contact_ID: 1
+
+two:
+  address: MyString
+  format: MyString
+  type: MyString
+  is_primary: false
+  contact_ID: 1

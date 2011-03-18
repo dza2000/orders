@@ -1,0 +1,20 @@
+<h1>Editing cash_detail</h1>
+
+<% form_for(@cash_detail) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </p>
+  <p>
+    <%= f.label :payment_ID %><br />
+    <%= f.text_field :payment_ID %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @cash_detail %> |
+<%= link_to 'Back', cash_details_path %>

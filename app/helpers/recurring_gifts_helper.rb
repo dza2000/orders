@@ -1,0 +1,2 @@
+module RecurringGiftsHelper
+end

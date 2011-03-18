@@ -1,0 +1,2 @@
+module GivingGroupsHelper
+end

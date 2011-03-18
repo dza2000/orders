@@ -1,0 +1,2 @@
+module TransactionReceiptsHelper
+end

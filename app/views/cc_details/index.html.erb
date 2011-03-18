@@ -1,0 +1,30 @@
+<h1>Listing cc_details</h1>
+
+<table>
+  <tr>
+    <th>Payment id</th>
+    <th>Cc mask</th>
+    <th>Expiration date</th>
+    <th>Name on card</th>
+    <th>Amount</th>
+    <th>Card type</th>
+  </tr>
+
+<% @cc_details.each do |cc_detail| %>
+  <tr>
+    <td><%=h cc_detail.payment_ID %></td>
+    <td><%=h cc_detail.cc_mask %></td>
+    <td><%=h cc_detail.expiration_date %></td>
+    <td><%=h cc_detail.name_on_card %></td>
+    <td><%=h cc_detail.amount %></td>
+    <td><%=h cc_detail.card_type %></td>
+    <td><%= link_to 'Show', cc_detail %></td>
+    <td><%= link_to 'Edit', edit_cc_detail_path(cc_detail) %></td>
+    <td><%= link_to 'Destroy', cc_detail, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cc_detail', new_cc_detail_path %>

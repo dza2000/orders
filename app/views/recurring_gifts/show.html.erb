@@ -1,0 +1,38 @@
+<p>
+  <b>Transaction:</b>
+  <%=h @recurring_gift.transaction_id %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%=h @recurring_gift.contact_id %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @recurring_gift.start_date %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%=h @recurring_gift.amount %>
+</p>
+
+<p>
+  <b>Deactivate:</b>
+  <%=h @recurring_gift.deactivate %>
+</p>
+
+<p>
+  <b>Interval:</b>
+  <%=h @recurring_gift.interval %>
+</p>
+
+<p>
+  <b>Interval size:</b>
+  <%=h @recurring_gift.interval_size %>
+</p>
+
+
+<%= link_to 'Edit', edit_recurring_gift_path(@recurring_gift) %> |
+<%= link_to 'Back', recurring_gifts_path %>

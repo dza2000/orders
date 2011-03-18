@@ -1,0 +1,37 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  altID: 1
+  first_name: MyString
+  last_name: MyString
+  m_initial: MyString
+  is_individual: false
+  suffix: MyString
+  title: MyString
+  company_name: MyString
+  job_title: MyString
+  greeting1: MyString
+  greeting2: MyString
+  greeting3: MyString
+  do_not_mail: false
+  do_not_email: false
+  do_not_phone: false
+  special_flag: MyString
+
+two:
+  altID: 1
+  first_name: MyString
+  last_name: MyString
+  m_initial: MyString
+  is_individual: false
+  suffix: MyString
+  title: MyString
+  company_name: MyString
+  job_title: MyString
+  greeting1: MyString
+  greeting2: MyString
+  greeting3: MyString
+  do_not_mail: false
+  do_not_email: false
+  do_not_phone: false
+  special_flag: MyString

@@ -1,0 +1,19 @@
+<h1>New order</h1>
+
+<h2>Customer: <%= @order.transaction.contact.first_name %> <%= @order.transaction.contact.last_name%></h2>
+<% form_for(@order, :html=>{:id=>"my_form"}) do |f| %>
+  <%= f.error_messages %>
+
+  
+    <%= f.hidden_field :transaction_id %>
+  
+  
+    <%= f.hidden_field :contact_id, :value=>@order.transaction.contact_id %>
+  
+  
+  <p>
+    <%= button_to_function "Confirm", "$('my_form').submit(); window.opener.location.reload();window.close()"   %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', orders_path %>

@@ -1,0 +1,38 @@
+<p>
+  <b>Line1:</b>
+  <%=h @shipping_address.line1 %>
+</p>
+
+<p>
+  <b>Line2:</b>
+  <%=h @shipping_address.line2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @shipping_address.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @shipping_address.state_id %>
+</p>
+
+<p>
+  <b>Province:</b>
+  <%=h @shipping_address.province %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%=h @shipping_address.zip %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @shipping_address.country_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_shipping_address_path(@shipping_address) %> |
+<%= link_to 'Back', shipping_addresses_path %>

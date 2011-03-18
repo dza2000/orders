@@ -1,0 +1,24 @@
+<h1>Editing shipment</h1>
+
+<% form_for(@shipment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :staff_ID %><br />
+    <%= f.text_field :staff_ID %>
+  </p>
+  <p>
+    <%= f.label :tracking_number %><br />
+    <%= f.text_field :tracking_number %>
+  </p>
+  <p>
+    <%= f.label :transaction_ID %><br />
+    <%= f.text_field :transaction_ID %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @shipment %> |
+<%= link_to 'Back', shipments_path %>

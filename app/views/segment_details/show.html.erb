@@ -1,0 +1,13 @@
+<p>
+  <b>Contact id:</b>
+  <%=h @segment_detail.contact_ID %>
+</p>
+
+<p>
+  <b>Segment id:</b>
+  <%=h @segment_detail.segment_ID %>
+</p>
+
+
+<%= link_to 'Edit', edit_segment_detail_path(@segment_detail) %> |
+<%= link_to 'Back', segment_details_path %>

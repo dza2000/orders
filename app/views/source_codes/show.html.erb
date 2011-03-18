@@ -1,0 +1,28 @@
+<p>
+  <b>Code:</b>
+  <%=h @source_code.code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @source_code.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @source_code.description %>
+</p>
+
+<p>
+  <b>Source code type:</b>
+  <%=h @source_code.source_code_type_id %>
+</p>
+
+<p>
+  <b>Staff:</b>
+  <%=h @source_code.staff_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_source_code_path(@source_code) %> |
+<%= link_to 'Back', source_codes_path %>

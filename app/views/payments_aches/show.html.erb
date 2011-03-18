@@ -1,0 +1,18 @@
+<p>
+  <b>Payment:</b>
+  <%=h @payments_ach.payment_id %>
+</p>
+
+<p>
+  <b>Account mask:</b>
+  <%=h @payments_ach.account_mask %>
+</p>
+
+<p>
+  <b>Routing mask:</b>
+  <%=h @payments_ach.routing_mask %>
+</p>
+
+
+<%= link_to 'Edit', edit_payments_ach_path(@payments_ach) %> |
+<%= link_to 'Back', payments_aches_path %>

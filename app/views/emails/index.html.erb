@@ -1,0 +1,28 @@
+<h1>Listing emails</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Format</th>
+    <th>Type</th>
+    <th>Is primary</th>
+    <th>Contact id</th>
+  </tr>
+
+<% @emails.each do |email| %>
+  <tr>
+    <td><%=h email.address %></td>
+    <td><%=h email.format %></td>
+    <td><%=h email.type %></td>
+    <td><%=h email.is_primary %></td>
+    <td><%=h email.contact_ID %></td>
+    <td><%= link_to 'Show', email %></td>
+    <td><%= link_to 'Edit', edit_email_path(email) %></td>
+    <td><%= link_to 'Destroy', email, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New email', new_email_path %>

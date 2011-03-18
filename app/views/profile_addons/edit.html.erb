@@ -1,0 +1,36 @@
+<h1>Editing profile_addon</h1>
+
+<% form_for(@profile_addon) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :contact_id %><br />
+    <%= f.text_field :contact_id %>
+  </p>
+  <p>
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </p>
+  <p>
+    <%= f.label :birth_month %><br />
+    <%= f.text_field :birth_month %>
+  </p>
+  <p>
+    <%= f.label :station_id %><br />
+    <%= f.text_field :station_id %>
+  </p>
+  <p>
+    <%= f.label :married %><br />
+    <%= f.check_box :married %>
+  </p>
+  <p>
+    <%= f.label :s1_cluster %><br />
+    <%= f.text_field :s1_cluster %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @profile_addon %> |
+<%= link_to 'Back', profile_addons_path %>

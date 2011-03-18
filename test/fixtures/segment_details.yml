@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  contact_ID: 1
+  segment_ID: 1
+
+two:
+  contact_ID: 1
+  segment_ID: 1

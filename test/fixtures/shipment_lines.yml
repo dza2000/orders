@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  shipment_ID: 1
+  transaction_line_ID: 1
+
+two:
+  shipment_ID: 1
+  transaction_line_ID: 1

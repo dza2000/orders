@@ -1,0 +1,24 @@
+<h1>Editing check_detail</h1>
+
+<% form_for(@check_detail) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :payment_ID %><br />
+    <%= f.text_field :payment_ID %>
+  </p>
+  <p>
+    <%= f.label :check_number %><br />
+    <%= f.text_field :check_number %>
+  </p>
+  <p>
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @check_detail %> |
+<%= link_to 'Back', check_details_path %>

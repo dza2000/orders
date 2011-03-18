@@ -1,0 +1,22 @@
+<h1>Listing source_code_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% @source_code_types.each do |source_code_type| %>
+  <tr>
+    <td><%=h source_code_type.name %></td>
+    <td><%=h source_code_type.description %></td>
+    <td><%= link_to 'Show', source_code_type %></td>
+    <td><%= link_to 'Edit', edit_source_code_type_path(source_code_type) %></td>
+    <td><%= link_to 'Destroy', source_code_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New source_code_type', new_source_code_type_path %>

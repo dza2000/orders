@@ -1,0 +1,18 @@
+<p>
+  <b>Subscription id:</b>
+  <%=h @received_issue.subscription_ID %>
+</p>
+
+<p>
+  <b>Issue published id:</b>
+  <%=h @received_issue.issue_published_ID %>
+</p>
+
+<p>
+  <b>Ship:</b>
+  <%=h @received_issue.ship %>
+</p>
+
+
+<%= link_to 'Edit', edit_received_issue_path(@received_issue) %> |
+<%= link_to 'Back', received_issues_path %>

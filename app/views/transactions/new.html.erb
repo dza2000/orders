@@ -1,0 +1,51 @@
+<h1>New transaction for <%= @transaction.contact.first_name %> <%= @transaction.contact.last_name %></h1>
+
+<% form_for [@contact, @transaction] do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    
+    <%= f.hidden_field :contact_id  %>
+    
+  </p>
+  <% if @transaction.contact.addresses.size > 1%>
+<b>  Select a Shipping Address:</b><br>
+  <table><% for address in @transaction.contact.addresses %>
+  	<tr>
+  		<td valign="top"><%= radio_button("transaction", "address_id", address.id)%> </td>
+		<td><%= address.line1 %><br>
+		<% if address.line2? %>
+		<%= address.line2 %><br>
+		<% else %>
+		<% end %>
+		
+		<%= address.city %>, <%= address.stateAbbrev %> <%= address.zip %></td>
+  	</tr><% end %>
+  </table> 
+  <% else %>    
+  <% for address in @transaction.contact.addresses %>
+  <%= f.hidden_field :address_id, :value => address.id %>
+  <i>This package will be shipped to:</i><br>
+  <br>
+		<%= address.line1 %><br>
+		<% if address.line2? %>
+		<%= address.line2 %><br>
+		<% end %>
+		<%= address.city %>, <%= address.stateAbbrev %> <%= address.zip %>
+  <br>
+  <br>
+  If this address is not correct, please <%= link_to 'add a new address', new_contact_address_path(@transaction.contact), :target=>"_blank" %> for this contact.	
+  <% end %>
+  
+  <% end %>
+  <p>
+    <%= f.label :staff_id %><br />
+    <%= f.text_field :staff_id %>
+  </p>
+  
+  
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to_function "Cancel", "window.close();"   %>

@@ -1,0 +1,36 @@
+<h1>New donation</h1>
+
+<% form_for(@donation, :html=>{:id=>"new_donation"}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :contact_id %><br />
+    <%= f.text_field :contact_id, :value=> @donation.transaction.contact_id %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  
+  <p>
+    <%= f.label :dedicated_to %><br />
+    <%= f.text_field :dedicated_to %>
+  </p>
+  <p>
+    <%= f.label :personalized_inscription %><br />
+    <%= f.text_area :personalized_inscription %>
+  </p>
+  <p>
+    <%= f.label :transaction_id %><br />
+    <%= f.text_field :transaction_id %>
+  </p>
+  <p>
+    <%= f.label :ship %><br />
+    <%= f.check_box :ship %>
+  </p>
+  <p>
+    <%= button_to_function "Save", "$('new_donation').submit(); window.opener.location.reload();window.close()"   %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', donations_path %>

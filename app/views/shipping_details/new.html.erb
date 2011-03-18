@@ -1,0 +1,51 @@
+<h1>New shipping_detail</h1>
+
+<% form_for(@shipping_detail) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :transaction_ID %><br />
+    <%= f.text_field :transaction_ID %>
+  </p>
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :address_line1 %><br />
+    <%= f.text_field :address_line1 %>
+  </p>
+  <p>
+    <%= f.label :address_line2 %><br />
+    <%= f.text_field :address_line2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state_ID %><br />
+    <%= f.text_field :state_ID %>
+  </p>
+  <p>
+    <%= f.label :province %><br />
+    <%= f.text_field :province %>
+  </p>
+  <p>
+    <%= f.label :country_ID %><br />
+    <%= f.text_field :country_ID %>
+  </p>
+  <p>
+    <%= f.label :shipping_method %><br />
+    <%= f.text_field :shipping_method %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', shipping_details_path %>

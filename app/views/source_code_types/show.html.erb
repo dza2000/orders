@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @source_code_type.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @source_code_type.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_source_code_type_path(@source_code_type) %> |
+<%= link_to 'Back', source_code_types_path %>
