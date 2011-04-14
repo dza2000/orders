@@ -370,5 +370,54 @@ subscription.update_attribute(:needs_reprinting, 0)
   redirect_to(:action=>"index")
 end
 
+def merge
+  #define the merge from contact.
+  contact1 = Contact.find(params[:contact1])
+  #define the merge to contact.
+  contact2 = Contact.find(params[:contact2])
+  
+  
+  #start with the transactions.
+  if contact1.transactions.size > 0
+  contact1.transactions.each do |transaction|
+    transaction.update_attribute(:contact_id, contact2.id)
+  end
+  end
+  #then change any donations.
+  if contact1.donations.size > 0
+    contact1.donations.each do |donation|
+      donation.update_attribute(:contact_id, contact2.id)
+    end
+  end
+  #now for the subscriptions.
+  if contact1.subscriptions.size > 0
+    contact1.subscriptions.each do |subscription|
+      subscription.update_attribute(:contact_id, contact2.id)
+    end
+    end
+  if contact1.received_issues.size > 0
+  contact1.received_issues.each do |issue|
+      issue.update_attribute(:contact_id, contact2.id)
+    end
+    end
+  #and finally, orders.
+  if contact1.orders.size > 0
+    contact1.orders.each do |order|
+      order.update_attribute(:contact_id, contact2.id)
+    end
+  end
+  #now, grab the primary address of contact2.
+  address = contact2.addresses.all(:conditions=>"is_primary = true")
+  contact2.transactions.each do |transaction|
+    transaction.update_attribute(:address_id, address.id)
+  end
+  
+
+#Congrats, you merged the accounts.
+  flash[:notice] = "You merged #{contact1.id} and #{contact2.id}."
+  contact1.destroy
+  
+  redirect_to :controller=>"contacts", :action=>"show", :id=>contact2.id
+end
 
 end

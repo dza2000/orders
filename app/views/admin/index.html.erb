@@ -14,3 +14,17 @@
 
 
 <% end %>
+<br>
+
+<div>
+	<div id="mergeform" >
+		<h3>Account Merge</h3>
+		<% form_tag('admin/merge') do %>
+		<div id="formfields">
+		Merge from: <%= text_field_tag 'contact1'%><br><br>
+		Merge to:   <%= text_field_tag 'contact2' %><br><br>
+		<%= submit_tag 'Submit' %>
+		</div>
+		<% end %>
+	</div>
+</div>
