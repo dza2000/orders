@@ -7,17 +7,19 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
+  
   <p>
     <%= f.label :minimum_donation %><br />
     <%= f.text_field :minimum_donation %>
   </p>
   <p>
-    <%= f.label :catalog_item_id %><br />
-    <%= f.text_field :catalog_item_id %>
+    <%= f.label :sku %><br />
+    <%= f.text_field :sku %>
+  </p>
+  <p>
+  	<%= f.label "Needs Printing?"%>
+  	<%= f.check_box :needs_printing %>
+  	
   </p>
   <p>
     <%= f.submit 'Update' %>

@@ -3,7 +3,7 @@ class CatalogItemsController < ApplicationController
   # GET /catalog_items
   # GET /catalog_items.xml
   def index
-    @catalog_items = CatalogItem.all
+    @catalog_items = CatalogItem.all(:order => 'name')
 
     respond_to do |format|
       format.html # index.html.erb

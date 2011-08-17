@@ -1,39 +1,21 @@
-<h1>Listing catalog_items</h1>
+<h1>Estore Items</h1>
 
 <table>
   <tr>
     <th>Name</th>
-    <th>Description</th>
+    
     <th>Sku</th>
     <th>Unit price</th>
-    <th>Do not display price</th>
-    <th>Taxable</th>
-    <th>Fmv</th>
-    <th>Requires shipping</th>
-    <th>Shipping weight</th>
-    <th>Flat rate shipping handling</th>
-    <th>Item level discounts</th>
-    <th>Front end</th>
     
-    <th>Category id</th>
   </tr>
 
 <% @catalog_items.each do |catalog_item| %>
   <tr>
     <td><%=h catalog_item.name %></td>
-    <td><%=h catalog_item.description %></td>
-    <td><%=h catalog_item.sku %></td>
-    <td><%=h catalog_item.unit_price %></td>
-    <td><%=h catalog_item.do_not_display_price %></td>
-    <td><%=h catalog_item.taxable %></td>
-    <td><%=h catalog_item.FMV %></td>
-    <td><%=h catalog_item.requires_shipping %></td>
-    <td><%=h catalog_item.shipping_weight %></td>
-    <td><%=h catalog_item.flat_rate_shipping_handling %></td>
-    <td><%=h catalog_item.item_level_discounts %></td>
-    <td><%=h catalog_item.front_end %></td>
     
-    <td><%=h catalog_item.category_id %></td>
+    <td><%=h catalog_item.sku %></td>
+    <td><%=h number_to_currency(catalog_item.unit_price) %></td>
+    
     <td><%= link_to 'Show', catalog_item %></td>
     <td><%= link_to 'Edit', edit_catalog_item_path(catalog_item) %></td>
     <td><%= link_to 'Destroy', catalog_item, :confirm => 'Are you sure?', :method => :delete %></td>

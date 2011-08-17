@@ -2,10 +2,7 @@
   <b>Name:</b>
   <%=h @catalog_item.name %>
 </p>
-<p>
-	<%= image_tag @catalog_item.image.url%>
 
-<p>
   <b>Description:</b>
   <%=h @catalog_item.description %>
 </p>
@@ -17,7 +14,7 @@
 
 <p>
   <b>Unit price:</b>
-  <%=h @catalog_item.unit_price %>
+  <%=h number_to_currency(@catalog_item.unit_price) %>
 </p>
 
 <p>
@@ -32,7 +29,7 @@
 
 <p>
   <b>Fmv:</b>
-  <%=h @catalog_item.FMV %>
+  <%=h number_to_currency(@catalog_item.FMV) %>
 </p>
 
 <p>

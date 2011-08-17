@@ -8,10 +8,11 @@
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
-
+<div id="transaction_content">
+	<div id="address_whitespace">
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield %>
-
+</div></div>
 </body>
 </html>

@@ -100,7 +100,7 @@ end
      address = contact.addresses.find(:first)
      
      #if the subscription has an address other than the contact's address:
-     if received_issue.subscription.transaction.address.line1 !=""
+     if received_issue.subscription.transaction.address
      csv<< [
      received_issue.contact.id,
      received_issue.contact.first_name,

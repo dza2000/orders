@@ -7,5 +7,5 @@ class CatalogItem < ActiveRecord::Base
   "#{sku} #{name} "
 end
     
-    has_attached_file :image
+    
 end

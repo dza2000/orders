@@ -1,0 +1,31 @@
+<%= f.hidden_field :contact_id %>
+  <p>
+    <%= f.label :line1 %><br />
+    <%= f.text_field :line1 %>
+  </p>
+  
+  <p>
+    <%= f.label :line2 %><br />
+    <%= f.text_field :line2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state_ID %><br />
+    <%= f.text_field :state_id %>
+  </p>
+  <p>
+    <%= f.label :country_ID %><br />
+    <%= f.text_field :country_id %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :address_type %>
+  </p>
+  <p>
+    <%= f.label :is_primary %><br />
+    <%= f.check_box :is_primary %>
+  </p>
+ 

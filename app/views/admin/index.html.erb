@@ -1,7 +1,7 @@
 <h1>Homepage for <%= Staff.find(session[:staff_id]).first_name %> <%= Staff.find(session[:staff_id]).last_name %></h1>
 
 <hr>
-<%= link_to "Contacts", :controller=>"contacts", :action=>"index" %> | <%= link_to "Transactions", :controller=>"transactions", :action=>"index" %> | <%= link_to "Import CSVs", :action => "import" %> | <%= link_to "Print Transactions", :controller=>"transactions", :action=>"printing"%> | <%= link_to "Reprints", :action=>"printing" %> |  <% if session[:staff_id] %><%= link_to "Logout", :action=>"logout"%><% end %>
+<%= link_to "Contacts", :controller=>"contacts", :action=>"index" %> | <%= link_to "Transactions", :controller=>"transactions", :action=>"index" %> | <%= link_to "Import CSVs", :action => "import" %> | <%= link_to "Print Transactions", :controller=>"transactions", :action=>"printing"%> | <%= link_to "Reprints", :action=>"printing" %> |  <%= link_to 'New estore product', :controller=>"catalog_items", :action=>"new"%> | <%= link_to 'New Donation Item', :controller=>"initiatives", :action=>"new"%> | <% if session[:staff_id] %><%= link_to "Logout", :action=>"logout"%><% end %>
 
 <br>
 <% if Staff.find(session[:staff_id]).role == "admin" %>
